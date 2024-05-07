@@ -8,6 +8,7 @@ import FavoritesScreen from '../screens/FavoritesScreen';
 import CartScreen from '../screens/CartScreen';
 import OrderHistoryScreen from '../screens/OrderHistoryScreen';
 import CustomIcon from '../components/CustomIcon';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +33,7 @@ const TabNavigator = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
-            <CustomIcon
+            <Entypo
               name="home"
               size={25}
               color={
@@ -46,7 +47,7 @@ const TabNavigator = () => {
         component={CartScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
-            <CustomIcon
+            <Entypo
               name="cart"
               size={25}
               color={

@@ -23,7 +23,7 @@ import CustomIcon from '../components/CustomIcon';
 import {FlatList} from 'react-native';
 import CoffeeCard from '../components/CoffeeCard';
 import {Dimensions} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Feather from "react-native-vector-icons/Feather";
 
 
 const getCategoriesFromData = (data: any) => {
@@ -144,7 +144,7 @@ const HomeScreen = ({navigation}: any) => {
             onPress={() => {
               searchCoffee(searchText);
             }}>
-            <CustomIcon
+            <Feather
               style={styles.InputIcon}
               name="search"
               size={FONTSIZE.size_18}
