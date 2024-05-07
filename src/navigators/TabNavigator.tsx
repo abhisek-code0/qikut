@@ -48,7 +48,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <Entypo
-              name="cart"
+              name="shopping-cart"
               size={25}
               color={
                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
@@ -61,8 +61,8 @@ const TabNavigator = () => {
         component={FavoritesScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
-            <CustomIcon
-              name="like"
+            <Entypo
+              name="heart"
               size={25}
               color={
                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
@@ -75,7 +75,7 @@ const TabNavigator = () => {
         component={OrderHistoryScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
-            <CustomIcon
+            <Entypo
               name="bell"
               size={25}
               color={

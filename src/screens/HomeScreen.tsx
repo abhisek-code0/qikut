@@ -24,6 +24,7 @@ import {FlatList} from 'react-native';
 import CoffeeCard from '../components/CoffeeCard';
 import {Dimensions} from 'react-native';
 import Feather from "react-native-vector-icons/Feather";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 
 const getCategoriesFromData = (data: any) => {
@@ -170,7 +171,7 @@ const HomeScreen = ({navigation}: any) => {
               onPress={() => {
                 resetSearchCoffee();
               }}>
-              <CustomIcon
+              <AntDesign
                 style={styles.InputIcon}
                 name="close"
                 size={FONTSIZE.size_16}
