@@ -9,6 +9,8 @@ import CartScreen from '../screens/CartScreen';
 import OrderHistoryScreen from '../screens/OrderHistoryScreen';
 import CustomIcon from '../components/CustomIcon';
 import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,8 +49,8 @@ const TabNavigator = () => {
         component={CartScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
-            <Entypo
-              name="shopping-cart"
+            <MaterialCommunityIcons
+              name="bookshelf"
               size={25}
               color={
                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
@@ -75,8 +77,8 @@ const TabNavigator = () => {
         component={OrderHistoryScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
-            <Entypo
-              name="bell"
+            <MaterialIcons
+              name="history"
               size={25}
               color={
                 focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
