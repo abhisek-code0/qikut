@@ -18,7 +18,7 @@ const HomeScreen = () => {
   };
   return (
     <View style={styles.container}>
-      <Image source={require("../assets/logo.png")} style={styles.logo} />
+      <Image source={require("../assets/qikut_transparent.png")} style={styles.logo} />
       <Image source={require("../assets/man.png")} style={styles.bannerImage} />
       <Text style={styles.subTitle1}>
         Welcome to 
@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logo: {
-    height: 40,
-    width: 140,
+    height: 100,
+    width: 250,
     marginVertical: 30,
   },
   bannerImage: {
-    marginVertical: 20,
+    marginVertical: 10,
     height: 250,
     width: 231,
   },
