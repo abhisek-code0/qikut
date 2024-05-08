@@ -47,7 +47,7 @@ const SignupScreen = () => {
                     <TextInput
                         style={styles.textInput}
                         placeholder="Enter your email"
-                        placeholderTextColor={colors.secondary}
+                        placeholderTextColor={colors.primary}
                         keyboardType="email-address"
                     />
                 </View>
@@ -56,7 +56,7 @@ const SignupScreen = () => {
                     <TextInput
                         style={styles.textInput}
                         placeholder="Enter your password"
-                        placeholderTextColor={colors.secondary}
+                        placeholderTextColor={colors.primary}
                         secureTextEntry={secureEntery}
                     />
                     <TouchableOpacity
@@ -76,7 +76,7 @@ const SignupScreen = () => {
                     <TextInput
                         style={styles.textInput}
                         placeholder="Enter your phone no"
-                        placeholderTextColor={colors.secondary}
+                        placeholderTextColor={colors.primary}
                         secureTextEntry={secureEntery}
                         keyboardType="phone-pad"
                     />
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         borderWidth: 1,
-        borderColor: colors.secondary,
+        borderColor: colors.primary,
         borderRadius: 100,
         paddingHorizontal: 20,
         flexDirection: "row",
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     loginButtonWrapper: {
-        backgroundColor: colors.primary,
+        backgroundColor: colors.btn,
         borderRadius: 100,
         marginTop: 20,
     },
@@ -188,6 +188,7 @@ const styles = StyleSheet.create({
     googleText: {
         fontSize: 20,
         fontFamily: fonts.SemiBold,
+        color: colors.primary
     },
     footerContainer: {
         flexDirection: "row",
@@ -201,7 +202,7 @@ const styles = StyleSheet.create({
         fontFamily: fonts.Regular,
     },
     signupText: {
-        color: colors.primary,
+        color: colors.btn,
         fontFamily: fonts.Bold,
     },
 });
