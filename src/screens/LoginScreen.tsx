@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  SafeAreaView,
 } from "react-native";
 import React, { useState } from "react";
 import { colors } from "../utils/colors";
@@ -14,6 +15,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 import { useNavigation } from "@react-navigation/native";
 import SignupScreen from "./SignupScreen";
+import TabNavigator from "../navigators/TabNavigator";
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -26,8 +28,12 @@ const LoginScreen = () => {
     navigation.navigate("SIGNUP");
   };
 
+  const handleTab = () => {
+    navigation.navigate("Tab");
+  };
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.backButtonWrapper} onPress={handleGoBack}>
         <Ionicons
           name={"arrow-back-outline"}
@@ -70,7 +76,7 @@ const LoginScreen = () => {
         <TouchableOpacity>
           <Text style={styles.forgotPasswordText}>Forgot MPIN?</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.loginButtonWrapper}>
+        <TouchableOpacity style={styles.loginButtonWrapper} onPress={handleTab}>
           <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
         <Text style={styles.continueText}>or continue with</Text>
@@ -88,7 +94,7 @@ const LoginScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

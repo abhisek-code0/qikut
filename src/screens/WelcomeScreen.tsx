@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View, SafeAreaView, StatusBar } from "react-native";
 import React from "react";
 import { colors } from "../utils/colors";
 import { fonts } from "../utils/fonts";
@@ -17,7 +17,8 @@ const HomeScreen = () => {
     navigation.navigate("SIGNUP");
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor={colors.white} />
       <Image source={require("../assets/qikut_transparent.png")} style={styles.logo} />
       <Image source={require("../assets/man.png")} style={styles.bannerImage} />
       <Text style={styles.subTitle1}>
@@ -44,7 +45,7 @@ const HomeScreen = () => {
           <Text style={styles.signupButtonText}>Sign-up</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
