@@ -20,16 +20,18 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Image source={require("../assets/logo.png")} style={styles.logo} />
       <Image source={require("../assets/man.png")} style={styles.bannerImage} />
-      <Text style={styles.title}>Lorem ipsum dolor.</Text>
-      <Text style={styles.subTitle}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore 
+      <Text style={styles.subTitle1}>
+        Welcome to 
+      </Text>
+      <Text style={styles.title}>qikut.</Text>
+      <Text style={styles.subTitle2}>
+        The smart and handy app to manage all your Salon's and Services Anytime, Anywhere!
       </Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={[
             styles.loginButtonWrapper,
-            { backgroundColor: colors.primary },
+            { backgroundColor: colors.btn },
           ]}
           onPress={handleLogin}
         >
@@ -70,24 +72,33 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     textAlign: "center",
     color: colors.primary,
-    marginTop: 40,
+    marginTop: 0,
   },
-  subTitle: {
+  subTitle1: {
     fontSize: 18,
     paddingHorizontal: 20,
     textAlign: "center",
     color: colors.primary,
     fontFamily: fonts.Medium,
-    marginVertical: 20,
+    marginTop: 50,
+  },
+  subTitle2: {
+    fontSize: 18,
+    paddingHorizontal: 20,
+    textAlign: "center",
+    color: colors.primary,
+    fontFamily: fonts.Medium,
+    marginVertical: 0,
   },
   buttonContainer: {
-    marginTop: 20,
+    marginTop: 70,
     flexDirection: "row",
     borderWidth: 2,
-    borderColor: colors.primary,
+    borderColor: colors.btn,
     width: "80%",
     height: 60,
     borderRadius: 100,
+    
   },
   loginButtonWrapper: {
     justifyContent: "center",
@@ -96,13 +107,13 @@ const styles = StyleSheet.create({
     borderRadius: 98,
   },
   loginButtonText: {
-    color: colors.white,
+    color: colors.primary,
     fontSize: 18,
-    fontFamily: fonts.SemiBold,
+    fontFamily: fonts.Bold,
   },
   signupButtonText: {
     fontSize: 18,
-    fontFamily: fonts.SemiBold,
+    fontFamily: fonts.Bold,
     color: colors.primary,
   },
 });
