@@ -1,10 +1,12 @@
 package com.p_qikut
 
 import android.os.Bundle;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
+import java.awt.SplashScreen
 
 class MainActivity : ReactActivity() {
 
@@ -14,7 +16,8 @@ class MainActivity : ReactActivity() {
    */
   override fun getMainComponentName(): String = "p_qikut"
   override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(null)
+        SplashScreen.show(this);
+        super.onCreate(savedInstanceState);
     }
   /**
    * Returns the instance of the [ReactActivityDelegate]. We use [DefaultReactActivityDelegate]
