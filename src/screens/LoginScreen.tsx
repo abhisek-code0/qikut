@@ -53,7 +53,7 @@ const LoginScreen = () => {
           <TextInput
             style={styles.textInput}
             placeholder="Enter your email"
-            placeholderTextColor={colors.primary}
+            placeholderTextColor={colors.white}
             keyboardType="email-address"
           />
         </View>
@@ -62,7 +62,7 @@ const LoginScreen = () => {
           <TextInput
             style={styles.textInput}
             placeholder="Enter your mpin"
-            placeholderTextColor={colors.primary}
+            placeholderTextColor={colors.white}
             secureTextEntry={secureEntery}
           />
           <TouchableOpacity
@@ -103,7 +103,7 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.primaryBlackHex,
     padding: 20,
   },
   backButtonWrapper: {
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
   headingText: {
     fontSize: 32,
-    color: colors.primary,
+    color: colors.white,
     fontFamily: fonts.SemiBold,
   },
   formContainer: {
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     borderWidth: 1,
-    borderColor: colors.primary,
+    borderColor: colors.white,
     borderRadius: 100,
     paddingHorizontal: 20,
     flexDirection: "row",
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   },
   forgotPasswordText: {
     textAlign: "right",
-    color: colors.primary,
+    color: colors.white,
     fontFamily: fonts.SemiBold,
     marginVertical: 10,
   },
@@ -163,12 +163,12 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     fontSize: 14,
     fontFamily: fonts.Regular,
-    color: colors.primary,
+    color: colors.white,
   },
   googleButtonContainer: {
     flexDirection: "row",
     borderWidth: 2,
-    borderColor: colors.primary,
+    borderColor: colors.white,
     borderRadius: 100,
     justifyContent: "center",
     alignItems: "center",
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   googleText: {
     fontSize: 20,
     fontFamily: fonts.SemiBold,
-    color: colors.primary,
+    color: colors.white,
   },
   footerContainer: {
     flexDirection: "row",
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   accountText: {
-    color: colors.primary,
+    color: colors.white,
     fontFamily: fonts.Regular,
   },
   signupText: {

@@ -18,7 +18,7 @@ const HomeScreen = () => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={colors.white} />
+      <StatusBar backgroundColor={colors.primaryBlackHex} />
       <Image source={require("../assets/qikut_transparent.png")} style={styles.logo} />
       <Image source={require("../assets/man.png")} style={styles.bannerImage} />
       <Text style={styles.subTitle1}>
@@ -54,16 +54,16 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.primaryBlackHex,
     alignItems: "center",
   },
   logo: {
     height: 100,
     width: 250,
-    marginVertical: 30,
+    marginVertical: 10,
   },
   bannerImage: {
-    marginVertical: 10,
+    marginVertical: 0,
     height: 250,
     width: 231,
   },
@@ -72,34 +72,33 @@ const styles = StyleSheet.create({
     fontFamily: fonts.SemiBold,
     paddingHorizontal: 20,
     textAlign: "center",
-    color: colors.primary,
+    color: colors.white,
     marginTop: 0,
   },
   subTitle1: {
     fontSize: 18,
     paddingHorizontal: 20,
     textAlign: "center",
-    color: colors.primary,
+    color: colors.white,
     fontFamily: fonts.Medium,
-    marginTop: 50,
+    marginTop: 30,
   },
   subTitle2: {
     fontSize: 18,
     paddingHorizontal: 20,
     textAlign: "center",
-    color: colors.primary,
+    color: colors.white,
     fontFamily: fonts.Medium,
     marginVertical: 0,
   },
   buttonContainer: {
-    marginTop: 70,
+    marginTop: 40,
     flexDirection: "row",
     borderWidth: 2,
     borderColor: colors.btn,
     width: "80%",
     height: 60,
     borderRadius: 100,
-    
   },
   loginButtonWrapper: {
     justifyContent: "center",
@@ -108,13 +107,13 @@ const styles = StyleSheet.create({
     borderRadius: 98,
   },
   loginButtonText: {
-    color: colors.primary,
+    color: colors.white,
     fontSize: 18,
     fontFamily: fonts.Bold,
   },
   signupButtonText: {
     fontSize: 18,
     fontFamily: fonts.Bold,
-    color: colors.primary,
+    color: colors.white,
   },
 });
