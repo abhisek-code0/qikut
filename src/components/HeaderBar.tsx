@@ -3,6 +3,7 @@ import React from 'react';
 import {COLORS, FONTFAMILY, FONTSIZE, SPACING} from '../theme/theme';
 import GradientBGIcon from './GradientBGIcon';
 import ProfilePic from './ProfilePic';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 interface HeaderBarProps {
   title?: string;
@@ -11,7 +12,7 @@ interface HeaderBarProps {
 const HeaderBar: React.FC<HeaderBarProps> = ({title}) => {
   return (
     <View style={styles.HeaderContainer}>
-      <GradientBGIcon
+      <Entypo
         name="menu"
         color={COLORS.primaryLightGreyHex}
         size={FONTSIZE.size_16}

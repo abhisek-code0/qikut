@@ -17,7 +17,10 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
-//import BGIcon from './BGIcon';
+import BGIcon from './BGIcon';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
+import EIcon from './EIcon';
 
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
 
@@ -57,7 +60,7 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
         style={styles.CardImageBG}
         resizeMode="cover">
         <View style={styles.CardRatingContainer}>
-          <CustomIcon
+          <AntDesign
             name={'star'}
             color={COLORS.primaryOrangeHex}
             size={FONTSIZE.size_16}
@@ -84,12 +87,12 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
               prices: [{...price, quantity: 1}],
             });
           }}>
-          {/* <BGIcon
+          <EIcon
             color={COLORS.primaryWhiteHex}
-            name={'add'}
+            name={'plus'}
             BGColor={COLORS.primaryOrangeHex}
             size={FONTSIZE.size_10}
-          /> */}
+          />
         </TouchableOpacity>
       </View>
     </LinearGradient>

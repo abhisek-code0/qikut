@@ -16,6 +16,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 interface ImageBackgroundInfoProps {
   EnableBackHandler: boolean;
@@ -59,7 +60,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               onPress={() => {
                 BackHandler();
               }}>
-              <GradientBGIcon
+              <AntDesign
                 name="left"
                 color={COLORS.primaryLightGreyHex}
                 size={FONTSIZE.size_16}
@@ -69,8 +70,8 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               onPress={() => {
                 ToggleFavourite(favourite, type, id);
               }}>
-              <GradientBGIcon
-                name="like"
+              <AntDesign
+                name="heart"
                 color={
                   favourite ? COLORS.primaryRedHex : COLORS.primaryLightGreyHex
                 }
@@ -84,8 +85,8 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               onPress={() => {
                 ToggleFavourite(favourite, type, id);
               }}>
-              <GradientBGIcon
-                name="like"
+              <AntDesign
+                name="heart"
                 color={
                   favourite ? COLORS.primaryRedHex : COLORS.primaryLightGreyHex
                 }
@@ -136,7 +137,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
             </View>
             <View style={styles.InfoContainerRow}>
               <View style={styles.RatingContainer}>
-                <CustomIcon
+                <AntDesign
                   name={'star'}
                   color={COLORS.primaryOrangeHex}
                   size={FONTSIZE.size_20}

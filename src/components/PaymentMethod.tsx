@@ -9,6 +9,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 interface PaymentMethodProps {
   paymentMode: string;
@@ -41,7 +42,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
           colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
           style={styles.LinearGradientWallet}>
           <View style={styles.WalletRow}>
-            <CustomIcon
+            <Entypo
               name={'wallet'}
               color={COLORS.primaryOrangeHex}
               size={FONTSIZE.size_30}

@@ -16,6 +16,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import CustomIcon from './CustomIcon';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 interface CartItemProps {
   id: string;
@@ -90,7 +91,7 @@ const CartItem: React.FC<CartItemProps> = ({
                   onPress={() => {
                     decrementCartItemQuantityHandler(id, data.size);
                   }}>
-                  <CustomIcon
+                  <Entypo
                     name="minus"
                     color={COLORS.primaryWhiteHex}
                     size={FONTSIZE.size_10}
@@ -106,8 +107,8 @@ const CartItem: React.FC<CartItemProps> = ({
                   onPress={() => {
                     incrementCartItemQuantityHandler(id, data.size);
                   }}>
-                  <CustomIcon
-                    name="add"
+                  <Entypo
+                    name="plus"
                     color={COLORS.primaryWhiteHex}
                     size={FONTSIZE.size_10}
                   />
@@ -157,7 +158,7 @@ const CartItem: React.FC<CartItemProps> = ({
                 onPress={() => {
                   decrementCartItemQuantityHandler(id, prices[0].size);
                 }}>
-                <CustomIcon
+                <Entypo
                   name="minus"
                   color={COLORS.primaryWhiteHex}
                   size={FONTSIZE.size_10}
@@ -173,8 +174,8 @@ const CartItem: React.FC<CartItemProps> = ({
                 onPress={() => {
                   incrementCartItemQuantityHandler(id, prices[0].size);
                 }}>
-                <CustomIcon
-                  name="add"
+                <Entypo
+                  name="plus"
                   color={COLORS.primaryWhiteHex}
                   size={FONTSIZE.size_10}
                 />
