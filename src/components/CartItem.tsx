@@ -201,8 +201,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   CartItemImage: {
-    height: 130,
-    width: 130,
+    height: 100,
+    width: 100,
     borderRadius: BORDERRADIUS.radius_20,
   },
   CartItemInfo: {
@@ -248,8 +248,8 @@ const styles = StyleSheet.create({
   },
   SizeBox: {
     backgroundColor: COLORS.primaryBlackHex,
-    height: 40,
-    width: 100,
+    height: 30,
+    width: 90,
     borderRadius: BORDERRADIUS.radius_10,
     justifyContent: 'center',
     alignItems: 'center',
@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
   },
   CartItemIcon: {
     backgroundColor: COLORS.primaryOrangeHex,
-    padding: SPACING.space_12,
+    padding: SPACING.space_8,
     borderRadius: BORDERRADIUS.radius_10,
   },
   CartItemQuantityContainer: {
@@ -293,8 +293,8 @@ const styles = StyleSheet.create({
     borderRadius: BORDERRADIUS.radius_25,
   },
   CartItemSingleImage: {
-    height: 150,
-    width: 150,
+    height: 100,
+    width: 100,
     borderRadius: BORDERRADIUS.radius_20,
   },
   CartItemSingleInfoContainer: {
