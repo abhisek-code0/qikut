@@ -21,6 +21,7 @@ import BGIcon from './BGIcon';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EIcon from './EIcon';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
 
@@ -35,6 +36,7 @@ interface CoffeeCardProps {
   average_rating: number;
   price: any;
   buttonPressHandler: any;
+  distances: any;
 }
 
 const CoffeeCard: React.FC<CoffeeCardProps> = ({
@@ -48,11 +50,12 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
   average_rating,
   price,
   buttonPressHandler,
+  distances,
 }) => {
   return (
     <LinearGradient
-      start={{x: 0, y: 0}}
-      end={{x: 1, y: 1}}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
       style={styles.CardLinearGradientContainer}
       colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}>
       <ImageBackground
@@ -71,8 +74,12 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
       <Text style={styles.CardTitle}>{name}</Text>
       <Text style={styles.CardSubtitle}>{special_ingredient}</Text>
       <View style={styles.CardFooterRow}>
-        <Text style={styles.CardPriceCurrency}>
+        {/* <Text style={styles.CardPriceCurrency}>
           $ <Text style={styles.CardPrice}>{price.price}</Text>
+        </Text> */}
+        <Text style={styles.CardLocationIcon}>
+          <SimpleLineIcons name={'location-pin'} />
+          <Text style={styles.CardDistance}>1.5kms</Text>
         </Text>
         <TouchableOpacity
           onPress={() => {
@@ -84,7 +91,7 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
               imagelink_square,
               name,
               special_ingredient,
-              prices: [{...price, quantity: 1}],
+              prices: [{ ...price, quantity: 1 }],
             });
           }}>
           <EIcon
@@ -146,12 +153,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: SPACING.space_15,
   },
-  CardPriceCurrency: {
+  CardLocationIcon: {
     fontFamily: FONTFAMILY.poppins_semibold,
     color: COLORS.primaryOrangeHex,
     fontSize: FONTSIZE.size_18,
   },
-  CardPrice: {
+  // CardPriceCurrency: {
+  //   fontFamily: FONTFAMILY.poppins_semibold,
+  //   color: COLORS.primaryOrangeHex,
+  //   fontSize: FONTSIZE.size_18,
+  // },
+  // CardPrice: {
+  //   color: COLORS.primaryWhiteHex,
+  // },
+  CardDistance: {
     color: COLORS.primaryWhiteHex,
   },
 });
