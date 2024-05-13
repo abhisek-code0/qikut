@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import {
   ScrollView,
   StatusBar,
@@ -9,8 +9,8 @@ import {
   View,
   ToastAndroid,
 } from 'react-native';
-import {useStore} from '../store/store';
-import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
+import { useStore } from '../store/store';
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import {
   BORDERRADIUS,
   COLORS,
@@ -19,10 +19,10 @@ import {
   SPACING,
 } from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
-import CustomIcon from '../components/CustomIcon';
-import {FlatList} from 'react-native';
-import CoffeeCard from '../components/CoffeeCard';
-import {Dimensions} from 'react-native';
+// import CustomIcon from '../components/CustomIcon';
+import { FlatList } from 'react-native';
+import SalonCard from '../components/SalonCard';
+import { Dimensions } from 'react-native';
 import Feather from "react-native-vector-icons/Feather";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
@@ -41,7 +41,7 @@ const getCategoriesFromData = (data: any) => {
   return categories;
 };
 
-const getCoffeeList = (category: string, data: any) => {
+const getSalonList = (category: string, data: any) => {
   if (category == 'All') {
     return data;
   } else {
@@ -50,53 +50,52 @@ const getCoffeeList = (category: string, data: any) => {
   }
 };
 
-const HomeScreen = ({navigation}: any) => {
-  const CoffeeList = useStore((state: any) => state.CoffeeList);
-  const BeanList = useStore((state: any) => state.BeanList);
+const HomeScreen = ({ navigation }: any) => {
+  const SalonList = useStore((state: any) => state.SalonList);
   const addToCart = useStore((state: any) => state.addToCart);
   const calculateCartPrice = useStore((state: any) => state.calculateCartPrice);
 
   const [categories, setCategories] = useState(
-    getCategoriesFromData(CoffeeList),
+    getCategoriesFromData(SalonList),
   );
   const [searchText, setSearchText] = useState('');
   const [categoryIndex, setCategoryIndex] = useState({
     index: 0,
     category: categories[0],
   });
-  const [sortedCoffee, setSortedCoffee] = useState(
-    getCoffeeList(categoryIndex.category, CoffeeList),
+  const [sortedSalon, setSortedSalon] = useState(
+    getSalonList(categoryIndex.category, SalonList),
   );
 
   const ListRef: any = useRef<FlatList>();
   const tabBarHeight = useBottomTabBarHeight();
 
-  const searchCoffee = (search: string) => {
+  const searchSalon = (search: string) => {
     if (search != '') {
       ListRef?.current?.scrollToOffset({
         animated: true,
         offset: 0,
       });
-      setCategoryIndex({index: 0, category: categories[0]});
-      setSortedCoffee([
-        ...CoffeeList.filter((item: any) =>
+      setCategoryIndex({ index: 0, category: categories[0] });
+      setSortedSalon([
+        ...SalonList.filter((item: any) =>
           item.name.toLowerCase().includes(search.toLowerCase()),
         ),
       ]);
     }
   };
 
-  const resetSearchCoffee = () => {
+  const resetSearchSalon = () => {
     ListRef?.current?.scrollToOffset({
       animated: true,
       offset: 0,
     });
-    setCategoryIndex({index: 0, category: categories[0]});
-    setSortedCoffee([...CoffeeList]);
+    setCategoryIndex({ index: 0, category: categories[0] });
+    setSortedSalon([...SalonList]);
     setSearchText('');
   };
 
-  const CoffeCardAddToCart = ({
+  const SalonCardAddToCart = ({
     id,
     index,
     name,
@@ -105,6 +104,7 @@ const HomeScreen = ({navigation}: any) => {
     special_ingredient,
     type,
     prices,
+    distance,
   }: any) => {
     addToCart({
       id,
@@ -115,6 +115,7 @@ const HomeScreen = ({navigation}: any) => {
       special_ingredient,
       type,
       prices,
+      distance,
     });
     calculateCartPrice();
     ToastAndroid.showWithGravity(
@@ -123,8 +124,8 @@ const HomeScreen = ({navigation}: any) => {
       ToastAndroid.CENTER,
     );
   };
-        
-        
+
+
   return (
     <View style={styles.ScreenContainer}>
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
@@ -133,9 +134,9 @@ const HomeScreen = ({navigation}: any) => {
         contentContainerStyle={styles.ScrollViewFlex}>
         {/* App Header */}
         <HeaderBar />
-        
+
         <Text style={styles.ScreenTitle}>
-          Find the best{'\n'}coffee for you
+          Find the best{'\n'}Salon for you
         </Text>
 
         {/* Search Input */}
@@ -143,7 +144,7 @@ const HomeScreen = ({navigation}: any) => {
         <View style={styles.InputContainerComponent}>
           <TouchableOpacity
             onPress={() => {
-              searchCoffee(searchText);
+              searchSalon(searchText);
             }}>
             <Feather
               style={styles.InputIcon}
@@ -157,11 +158,11 @@ const HomeScreen = ({navigation}: any) => {
             />
           </TouchableOpacity>
           <TextInput
-            placeholder="Find Your Coffee..."
+            placeholder="Find Your Salon..."
             value={searchText}
             onChangeText={text => {
               setSearchText(text);
-              searchCoffee(text);
+              searchSalon(text);
             }}
             placeholderTextColor={COLORS.primaryLightGreyHex}
             style={styles.TextInputContainer}
@@ -169,7 +170,7 @@ const HomeScreen = ({navigation}: any) => {
           {searchText.length > 0 ? (
             <TouchableOpacity
               onPress={() => {
-                resetSearchCoffee();
+                resetSearchSalon();
               }}>
               <AntDesign
                 style={styles.InputIcon}
@@ -200,16 +201,16 @@ const HomeScreen = ({navigation}: any) => {
                     animated: true,
                     offset: 0,
                   });
-                  setCategoryIndex({index: index, category: categories[index]});
-                  setSortedCoffee([
-                    ...getCoffeeList(categories[index], CoffeeList),
+                  setCategoryIndex({ index: index, category: categories[index] });
+                  setSortedSalon([
+                    ...getSalonList(categories[index], SalonList),
                   ]);
                 }}>
                 <Text
                   style={[
                     styles.CategoryText,
                     categoryIndex.index == index
-                      ? {color: COLORS.primaryOrangeHex}
+                      ? { color: COLORS.primaryOrangeHex }
                       : {},
                   ]}>
                   {data}
@@ -224,21 +225,23 @@ const HomeScreen = ({navigation}: any) => {
           ))}
         </ScrollView>
 
-        {/* Coffee Flatlist */}
+
+        <Text style={styles.DifferentSalonTitle}>Nearby Salons</Text>
+        {/* Nearby Salon Flatlist */}
 
         <FlatList
           ref={ListRef}
           horizontal
           ListEmptyComponent={
             <View style={styles.EmptyListContainer}>
-              <Text style={styles.CategoryText}>No Coffee Available</Text>
+              <Text style={styles.CategoryText}>No Salon Available</Text>
             </View>
           }
           showsHorizontalScrollIndicator={false}
-          data={sortedCoffee}
+          data={sortedSalon}
           contentContainerStyle={styles.FlatListContainer}
           keyExtractor={item => item.id}
-          renderItem={({item}) => {
+          renderItem={({ item }) => {
             return (
               <TouchableOpacity
                 onPress={() => {
@@ -248,7 +251,7 @@ const HomeScreen = ({navigation}: any) => {
                     type: item.type,
                   });
                 }}>
-                <CoffeeCard
+                <SalonCard
                   id={item.id}
                   index={item.index}
                   type={item.type}
@@ -258,27 +261,31 @@ const HomeScreen = ({navigation}: any) => {
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
-                  buttonPressHandler={CoffeCardAddToCart}
+                  distances={item.distance}
+                  buttonPressHandler={SalonCardAddToCart}
                 />
               </TouchableOpacity>
             );
           }}
         />
 
-        <Text style={styles.CoffeeBeansTitle}>Coffee Beans</Text>
+        <Text style={styles.DifferentSalonTitle}>Unisex Salons</Text>
 
-        {/* Beans Flatlist */}
+        {/* Unisex Salons Flatlist */}
 
         <FlatList
+          ref={ListRef}
           horizontal
+          ListEmptyComponent={
+            <View style={styles.EmptyListContainer}>
+              <Text style={styles.CategoryText}>No Salon Available</Text>
+            </View>
+          }
           showsHorizontalScrollIndicator={false}
-          data={BeanList}
-          contentContainerStyle={[
-            styles.FlatListContainer,
-            {marginBottom: tabBarHeight},
-          ]}
+          data={sortedSalon}
+          contentContainerStyle={styles.FlatListContainer}
           keyExtractor={item => item.id}
-          renderItem={({item}) => {
+          renderItem={({ item }) => {
             return (
               <TouchableOpacity
                 onPress={() => {
@@ -288,7 +295,7 @@ const HomeScreen = ({navigation}: any) => {
                     type: item.type,
                   });
                 }}>
-                <CoffeeCard
+                <SalonCard
                   id={item.id}
                   index={item.index}
                   type={item.type}
@@ -298,7 +305,52 @@ const HomeScreen = ({navigation}: any) => {
                   special_ingredient={item.special_ingredient}
                   average_rating={item.average_rating}
                   price={item.prices[2]}
-                  buttonPressHandler={CoffeCardAddToCart}
+                  distances={item.distance}
+                  buttonPressHandler={SalonCardAddToCart}
+                />
+              </TouchableOpacity>
+            );
+          }}
+        />
+
+        <Text style={styles.DifferentSalonTitle}>Women Salons</Text>
+
+        {/* Women Salons Flatlist */}
+
+        <FlatList
+          ref={ListRef}
+          horizontal
+          ListEmptyComponent={
+            <View style={styles.EmptyListContainer}>
+              <Text style={styles.CategoryText}>No Salon Available</Text>
+            </View>
+          }
+          showsHorizontalScrollIndicator={false}
+          data={sortedSalon}
+          contentContainerStyle={styles.FlatListContainer}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push('Details', {
+                    index: item.index,
+                    id: item.id,
+                    type: item.type,
+                  });
+                }}>
+                <SalonCard
+                  id={item.id}
+                  index={item.index}
+                  type={item.type}
+                  roasted={item.roasted}
+                  imagelink_square={item.imagelink_square}
+                  name={item.name}
+                  special_ingredient={item.special_ingredient}
+                  average_rating={item.average_rating}
+                  price={item.prices[2]}
+                  distances={item.distance}
+                  buttonPressHandler={SalonCardAddToCart}
                 />
               </TouchableOpacity>
             );
@@ -373,10 +425,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: SPACING.space_36 * 3.6,
   },
-  CoffeeBeansTitle: {
+  DifferentSalonTitle: {
     fontSize: FONTSIZE.size_18,
     marginLeft: SPACING.space_30,
-    marginTop: SPACING.space_20,
+    marginTop: SPACING.space_4,
     fontFamily: FONTFAMILY.poppins_medium,
     color: COLORS.secondaryLightGreyHex,
   },

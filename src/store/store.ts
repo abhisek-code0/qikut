@@ -2,14 +2,12 @@ import {create} from 'zustand';
 import {produce} from 'immer';
 import {persist, createJSONStorage} from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import CoffeeData from '../data/CoffeeData';
-import BeansData from '../data/BeansData';
+import SalonData from '../data/SalonData';
 
 export const useStore = create(
   persist(
     (set, get) => ({
-      CoffeeList: CoffeeData,
-      BeanList: BeansData,
+      SalonList: SalonData,
       CartPrice: 0,
       FavoritesList: [],
       CartList: [],
@@ -72,59 +70,61 @@ export const useStore = create(
       addToFavoriteList: (type: string, id: string) =>
         set(
           produce(state => {
-            if (type == 'Coffee') {
-              for (let i = 0; i < state.CoffeeList.length; i++) {
-                if (state.CoffeeList[i].id == id) {
-                  if (state.CoffeeList[i].favourite == false) {
-                    state.CoffeeList[i].favourite = true;
-                    state.FavoritesList.unshift(state.CoffeeList[i]);
+            if (type == 'Salon') {
+              for (let i = 0; i < state.SalonList.length; i++) {
+                if (state.SalonList[i].id == id) {
+                  if (state.SalonList[i].favourite == false) {
+                    state.SalonList[i].favourite = true;
+                    state.FavoritesList.unshift(state.SalonList[i]);
                   } else {
-                    state.CoffeeList[i].favourite = false;
+                    state.SalonList[i].favourite = false;
                   }
                   break;
                 }
               }
-            } else if (type == 'Bean') {
-              for (let i = 0; i < state.BeanList.length; i++) {
-                if (state.BeanList[i].id == id) {
-                  if (state.BeanList[i].favourite == false) {
-                    state.BeanList[i].favourite = true;
-                    state.FavoritesList.unshift(state.BeanList[i]);
-                  } else {
-                    state.BeanList[i].favourite = false;
-                  }
-                  break;
-                }
-              }
-            }
+            } 
+            // else if (type == 'Bean') {
+            //   for (let i = 0; i < state.BeanList.length; i++) {
+            //     if (state.BeanList[i].id == id) {
+            //       if (state.BeanList[i].favourite == false) {
+            //         state.BeanList[i].favourite = true;
+            //         state.FavoritesList.unshift(state.BeanList[i]);
+            //       } else {
+            //         state.BeanList[i].favourite = false;
+            //       }
+            //       break;
+            //     }
+            //   }
+            // }
           }),
         ),
       deleteFromFavoriteList: (type: string, id: string) =>
         set(
           produce(state => {
-            if (type == 'Coffee') {
-              for (let i = 0; i < state.CoffeeList.length; i++) {
-                if (state.CoffeeList[i].id == id) {
-                  if (state.CoffeeList[i].favourite == true) {
-                    state.CoffeeList[i].favourite = false;
+            if (type == 'Salon') {
+              for (let i = 0; i < state.SalonList.length; i++) {
+                if (state.SalonList[i].id == id) {
+                  if (state.SalonList[i].favourite == true) {
+                    state.SalonList[i].favourite = false;
                   } else {
-                    state.CoffeeList[i].favourite = true;
+                    state.SalonList[i].favourite = true;
                   }
                   break;
                 }
               }
-            } else if (type == 'Beans') {
-              for (let i = 0; i < state.BeanList.length; i++) {
-                if (state.BeanList[i].id == id) {
-                  if (state.BeanList[i].favourite == true) {
-                    state.BeanList[i].favourite = false;
-                  } else {
-                    state.BeanList[i].favourite = true;
-                  }
-                  break;
-                }
-              }
-            }
+            } 
+            // else if (type == 'Beans') {
+            //   for (let i = 0; i < state.BeanList.length; i++) {
+            //     if (state.BeanList[i].id == id) {
+            //       if (state.BeanList[i].favourite == true) {
+            //         state.BeanList[i].favourite = false;
+            //       } else {
+            //         state.BeanList[i].favourite = true;
+            //       }
+            //       break;
+            //     }
+            //   }
+            // }
             let spliceIndex = -1;
             for (let i = 0; i < state.FavoritesList.length; i++) {
               if (state.FavoritesList[i].id == id) {
@@ -209,7 +209,7 @@ export const useStore = create(
         ),
     }),
     {
-      name: 'coffee-app',
+      name: 'qikut-app',
       storage: createJSONStorage(() => AsyncStorage),
     },
   ),
