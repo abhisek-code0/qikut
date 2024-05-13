@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     fontFamily: fonts.Light,
+    color: colors.white,
   },
   forgotPasswordText: {
     textAlign: "right",
