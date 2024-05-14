@@ -16,10 +16,7 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
-import CustomIcon from './CustomIcon';
-import BGIcon from './BGIcon';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import Entypo from 'react-native-vector-icons/Entypo';
 import EIcon from './EIcon';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
@@ -65,7 +62,7 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
         <View style={styles.CardRatingContainer}>
           <AntDesign
             name={'star'}
-            color={COLORS.primaryOrangeHex}
+            color={COLORS.primaryGoldHex}
             size={FONTSIZE.size_16}
           />
           <Text style={styles.CardRatingText}>{average_rating}</Text>
@@ -97,7 +94,7 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
           <EIcon
             color={COLORS.primaryWhiteHex}
             name={'plus'}
-            BGColor={COLORS.primaryOrangeHex}
+            BGColor={COLORS.primaryGoldHex}
             size={FONTSIZE.size_10}
           />
         </TouchableOpacity>
@@ -155,7 +152,7 @@ const styles = StyleSheet.create({
   },
   CardLocationIcon: {
     fontFamily: FONTFAMILY.poppins_semibold,
-    color: COLORS.primaryOrangeHex,
+    color: COLORS.primaryGoldHex,
     fontSize: FONTSIZE.size_18,
   },
   // CardPriceCurrency: {

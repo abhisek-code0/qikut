@@ -20,6 +20,7 @@ interface FavoritesItemCardProps {
   average_rating: number;
   ratings_count: string;
   roasted: string;
+  Timing: string;
   description: string;
   favourite: boolean;
   ToggleFavouriteItem: any;
@@ -35,6 +36,7 @@ const FavoritesItemCard: React.FC<FavoritesItemCardProps> = ({
   average_rating,
   ratings_count,
   roasted,
+  Timing,
   description,
   favourite,
   ToggleFavouriteItem,
@@ -53,6 +55,7 @@ const FavoritesItemCard: React.FC<FavoritesItemCardProps> = ({
         average_rating={average_rating}
         ratings_count={ratings_count}
         roasted={roasted}
+        Timing={Timing}
         ToggleFavourite={ToggleFavouriteItem}
       />
       <LinearGradient

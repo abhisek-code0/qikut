@@ -31,7 +31,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
         {
           borderColor:
             paymentMode == name
-              ? COLORS.primaryOrangeHex
+              ? COLORS.primaryGoldHex
               : COLORS.primaryGreyHex,
         },
       ]}>
@@ -44,7 +44,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({
           <View style={styles.WalletRow}>
             <Entypo
               name={'wallet'}
-              color={COLORS.primaryOrangeHex}
+              color={COLORS.primaryGoldHex}
               size={FONTSIZE.size_30}
             />
             <Text style={styles.PaymentTitle}>{name}</Text>

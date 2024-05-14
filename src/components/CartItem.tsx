@@ -74,7 +74,7 @@ const CartItem: React.FC<CartItemProps> = ({
                       styles.SizeText,
                       {
                         fontSize:
-                          type == 'Bean' ? FONTSIZE.size_12 : FONTSIZE.size_16,
+                          type == 'Salon' ? FONTSIZE.size_12 : FONTSIZE.size_16,
                       },
                     ]}>
                     {data.size}
@@ -141,7 +141,7 @@ const CartItem: React.FC<CartItemProps> = ({
                     styles.SizeText,
                     {
                       fontSize:
-                        type == 'Bean' ? FONTSIZE.size_12 : FONTSIZE.size_16,
+                        type == 'Salon' ? FONTSIZE.size_12 : FONTSIZE.size_16,
                     },
                   ]}>
                   {prices[0].size}
@@ -261,13 +261,13 @@ const styles = StyleSheet.create({
   SizeCurrency: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_18,
-    color: COLORS.primaryOrangeHex,
+    color: COLORS.primaryGoldHex,
   },
   SizePrice: {
     color: COLORS.primaryWhiteHex,
   },
   CartItemIcon: {
-    backgroundColor: COLORS.primaryOrangeHex,
+    backgroundColor: COLORS.primaryGoldHex,
     padding: SPACING.space_8,
     borderRadius: BORDERRADIUS.radius_10,
   },
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     width: 80,
     borderRadius: BORDERRADIUS.radius_10,
     borderWidth: 2,
-    borderColor: COLORS.primaryOrangeHex,
+    borderColor: COLORS.primaryGoldHex,
     alignItems: 'center',
     paddingVertical: SPACING.space_4,
   },

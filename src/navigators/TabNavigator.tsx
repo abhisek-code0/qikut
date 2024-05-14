@@ -45,7 +45,7 @@ const TabNavigator = () => {
           ),
         }}></Tab.Screen>
       <Tab.Screen
-        name="appointment"
+        name="Cart"
         component={CartScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (

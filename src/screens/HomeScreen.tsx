@@ -19,7 +19,6 @@ import {
   SPACING,
 } from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
-// import CustomIcon from '../components/CustomIcon';
 import { FlatList } from 'react-native';
 import SalonCard from '../components/SalonCard';
 import { Dimensions } from 'react-native';
@@ -152,7 +151,7 @@ const HomeScreen = ({ navigation }: any) => {
               size={FONTSIZE.size_18}
               color={
                 searchText.length > 0
-                  ? COLORS.primaryOrangeHex
+                  ? COLORS.primaryGoldHex
                   : COLORS.primaryLightGreyHex
               }
             />
@@ -210,7 +209,7 @@ const HomeScreen = ({ navigation }: any) => {
                   style={[
                     styles.CategoryText,
                     categoryIndex.index == index
-                      ? { color: COLORS.primaryOrangeHex }
+                      ? { color: COLORS.primaryGoldHex }
                       : {},
                   ]}>
                   {data}
@@ -412,7 +411,7 @@ const styles = StyleSheet.create({
     height: SPACING.space_10,
     width: SPACING.space_10,
     borderRadius: BORDERRADIUS.radius_10,
-    backgroundColor: COLORS.primaryOrangeHex,
+    backgroundColor: COLORS.primaryGoldHex,
   },
   FlatListContainer: {
     gap: SPACING.space_20,

@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   LottieText: {
     fontFamily: FONTFAMILY.poppins_medium,
     fontSize: FONTSIZE.size_16,
-    color: COLORS.primaryOrangeHex,
+    color: COLORS.primaryGoldHex,
     textAlign: 'center',
   },
 });

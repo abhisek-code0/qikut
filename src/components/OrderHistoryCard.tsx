@@ -84,7 +84,7 @@ import {
     HeaderPrice: {
       fontFamily: FONTFAMILY.poppins_medium,
       fontSize: FONTSIZE.size_18,
-      color: COLORS.primaryOrangeHex,
+      color: COLORS.primaryGoldHex,
     },
     ListContainer: {
       gap: SPACING.space_20,

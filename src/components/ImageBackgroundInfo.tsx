@@ -65,7 +65,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               }}>
               <AntDesignBGIcon
                 name="left"
-                color={COLORS.primaryLightGreyHex}
+                color={COLORS.primaryGoldHex}
                 size={FONTSIZE.size_16}
               />
             </TouchableOpacity>
@@ -113,14 +113,14 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                   <Ionicons
                     name={type == 'call' ? 'call' : 'call-sharp'}
                     size={type == 'Salon' ? FONTSIZE.size_18 : FONTSIZE.size_24}
-                    color={COLORS.primaryOrangeHex}
+                    color={COLORS.primaryGoldHex}
                   />
                 </View>
                 <View style={styles.ProperFirst}>
                   <Ionicons
                     name={type == 'location' ? 'location' : 'location-sharp'}
                     size={FONTSIZE.size_16}
-                    color={COLORS.primaryOrangeHex}
+                    color={COLORS.primaryGoldHex}
                   />
                 </View>
               </View>
@@ -129,7 +129,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               <View style={styles.RatingContainer}>
                 <AntDesign
                   name={'star'}
-                  color={COLORS.primaryOrangeHex}
+                  color={COLORS.primaryGoldHex}
                   size={FONTSIZE.size_20}
                 />
                 <Text style={styles.RatingText}>{average_rating}</Text>
