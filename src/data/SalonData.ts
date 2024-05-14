@@ -4,6 +4,7 @@ const SalonData = [
     name: 'Blissful Beauty',
     description: `Blissful Beauty is a serene salon specializing in holistic beauty treatments. Our holistic approach focuses on nurturing your body, mind, and spirit, leaving you feeling balanced and rejuvenated.`,
     roasted: 'Open Now',
+    Timing: '8.00 am - 8.00 pm',
     imagelink_square: require('../assets/salon_assets/blissful_beauty/blissful_beauty_square.jpg'),
     imagelink_portrait: require('../assets/salon_assets/blissful_beauty/blissful_beauty_portrait.jpg'),
     // ingredients: 'Milk',
