@@ -31,6 +31,7 @@ interface ImageBackgroundInfoProps {
   average_rating: number;
   ratings_count: string;
   roasted: string;
+  Timing: string;
   BackHandler?: any;
   ToggleFavourite: any;
 }
@@ -47,6 +48,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
   average_rating,
   ratings_count,
   roasted,
+  Timing,
   BackHandler,
   ToggleFavourite,
 }) => {
@@ -110,13 +112,13 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                 <View style={styles.ProperFirst}>
                   <Ionicons
                     name={type == 'call' ? 'call' : 'call-sharp'}
-                    size={type == 'calls' ? FONTSIZE.size_18 : FONTSIZE.size_24}
+                    size={type == 'Salon' ? FONTSIZE.size_18 : FONTSIZE.size_24}
                     color={COLORS.primaryOrangeHex}
                   />
                 </View>
                 <View style={styles.ProperFirst}>
                   <Ionicons
-                    name={type == 'salon' ? 'location' : 'location-sharp'}
+                    name={type == 'location' ? 'location' : 'location-sharp'}
                     size={FONTSIZE.size_16}
                     color={COLORS.primaryOrangeHex}
                   />
@@ -133,9 +135,9 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
                 <Text style={styles.RatingText}>{average_rating}</Text>
                 <Text style={styles.RatingCountText}>({ratings_count})</Text>
               </View>
-              <View style={styles.RoastedContainer}>
-                <Text style={styles.RoastedText}>{roasted}</Text>
-              </View>
+              {/* <View style={styles.RoastedContainer}>
+                <Text style={styles.RoastedText}>{Timing}</Text>
+              </View> */}
             </View>
           </View>
         </View>
