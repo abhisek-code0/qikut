@@ -15,8 +15,9 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
-import CustomIcon from './CustomIcon';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import AntDesignBGIcon from './AntDesignBGIcon';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 interface ImageBackgroundInfoProps {
   EnableBackHandler: boolean;
@@ -60,7 +61,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               onPress={() => {
                 BackHandler();
               }}>
-              <AntDesign
+              <AntDesignBGIcon
                 name="left"
                 color={COLORS.primaryLightGreyHex}
                 size={FONTSIZE.size_16}
@@ -70,7 +71,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               onPress={() => {
                 ToggleFavourite(favourite, type, id);
               }}>
-              <AntDesign
+              <AntDesignBGIcon
                 name="heart"
                 color={
                   favourite ? COLORS.primaryRedHex : COLORS.primaryLightGreyHex
@@ -85,7 +86,7 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               onPress={() => {
                 ToggleFavourite(favourite, type, id);
               }}>
-              <AntDesign
+              <AntDesignBGIcon
                 name="heart"
                 color={
                   favourite ? COLORS.primaryRedHex : COLORS.primaryLightGreyHex
@@ -107,31 +108,18 @@ const ImageBackgroundInfo: React.FC<ImageBackgroundInfoProps> = ({
               </View>
               <View style={styles.ItemPropertiesContainer}>
                 <View style={styles.ProperFirst}>
-                  <CustomIcon
-                    name={type == 'Bean' ? 'bean' : 'beans'}
-                    size={type == 'Bean' ? FONTSIZE.size_18 : FONTSIZE.size_24}
+                  <Ionicons
+                    name={type == 'call' ? 'call' : 'call-sharp'}
+                    size={type == 'calls' ? FONTSIZE.size_18 : FONTSIZE.size_24}
                     color={COLORS.primaryOrangeHex}
                   />
-                  <Text
-                    style={[
-                      styles.PropertyTextFirst,
-                      {
-                        marginTop:
-                          type == 'Bean'
-                            ? SPACING.space_4 + SPACING.space_2
-                            : 0,
-                      },
-                    ]}>
-                    {type}
-                  </Text>
                 </View>
                 <View style={styles.ProperFirst}>
-                  <CustomIcon
-                    name={type == 'Bean' ? 'location' : 'drop'}
+                  <Ionicons
+                    name={type == 'salon' ? 'location' : 'location-sharp'}
                     size={FONTSIZE.size_16}
                     color={COLORS.primaryOrangeHex}
                   />
-                  <Text style={styles.PropertyTextLast}>{ingredients}</Text>
                 </View>
               </View>
             </View>
